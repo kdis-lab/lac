@@ -1,0 +1,12 @@
+@relation weather.tennis
+
+@attribute outlook {sunny,overcast,rainy}
+@attribute temperature {hot,mild,cool}
+@attribute humidity {high,normal}
+@attribute windy {TRUE,FALSE}
+@attribute class {yes,no}
+
+@data
+overcast,mild,high,TRUE,yes
+overcast,hot,normal,FALSE,yes
+rainy,mild,high,TRUE,no

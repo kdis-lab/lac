@@ -1,0 +1,9 @@
+executions:
+  -
+    name_algorithm: 'CMAR'
+    configuration:
+      min_conf: 0.75
+    train: weather-train.arff
+    test: weather-test.arff
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cmar'

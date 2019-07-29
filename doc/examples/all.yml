@@ -1,0 +1,55 @@
+.dataset_weather: &dataset_weather
+  train: weather-train.arff
+  test: weather-test.arff
+
+executions:
+  -
+    name_algorithm: 'CBA'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cba'
+  -
+    name_algorithm: 'CBA2'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cba2'
+  -
+    name_algorithm: 'ACAC'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/acac'
+  -
+    name_algorithm: 'ACCF'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/accf'
+  -
+    name_algorithm: 'ACN'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/acn'
+  -
+    name_algorithm: 'CMAR'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cmar'
+  -
+    name_algorithm: 'L3'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cpar'
+  -
+    name_algorithm: 'MAC'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/mac'
+  -
+    name_algorithm: 'ADT'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/adt'
+  -
+    name_algorithm: 'CPAR'
+    <<: *dataset_weather
+    report_type: ['KlassReport', 'ClassifierReport', 'MetricsReport']
+    report: '/tmp/cpar'
