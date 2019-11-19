@@ -28,7 +28,7 @@ public class Classifier {
     /**
      * Value used when the classifier is not able to perform a prediction
      */
-    protected static short NO_PREDICTION = -1;
+    public static short NO_PREDICTION = -1;
 
     /**
      * Array of rules forming the classifier

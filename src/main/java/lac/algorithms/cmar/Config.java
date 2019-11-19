@@ -52,6 +52,24 @@ public class Config extends lac.algorithms.Config {
      * 
      * @param minConf minimum value for confidence
      */
+    public void setMinConf(Integer minConf) {
+        this.minConf = minConf;
+    }
+
+    /**
+     * Set the minimum support for the rules
+     * 
+     * @param minSup minimum value for support
+     */
+    public void setMinSup(Integer minSup) {
+        this.minSup = minSup;
+    }
+
+    /**
+     * Set the minimum confidence for the rules
+     * 
+     * @param minConf minimum value for confidence
+     */
     public void setMinConf(Double minConf) {
         this.minConf = minConf;
     }

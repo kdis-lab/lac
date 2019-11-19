@@ -1,0 +1,9 @@
+@relation dataset
+@attribute attr1 {val1, val2}
+@attribute attr2 {s1, s2}
+@attribute class {class1, class2}
+% comment
+@data
+val1, s1, class1
+val2, s2, class2
+val1, s2,class1

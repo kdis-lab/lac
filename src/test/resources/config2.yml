@@ -1,0 +1,5 @@
+executions:
+  -
+    name_algorithm: 'ACCF'
+    train: src/test/resources/data/dataset-nominal.arff
+    test: src/test/resources/data/dataset-nominal.arff

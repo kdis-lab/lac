@@ -28,6 +28,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import lac.data.Dataset;
+import lac.utils.Utils;
 
 /**
  * Class implementing the well-known ECLAT algorithm. Presented at: M. J. Zaki,

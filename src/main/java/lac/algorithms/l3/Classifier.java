@@ -138,6 +138,6 @@ public class Classifier extends lac.algorithms.Classifier {
                 return (short) (rule.getKlass());
         }
 
-        return -1;
+        return NO_PREDICTION;
     }
 }

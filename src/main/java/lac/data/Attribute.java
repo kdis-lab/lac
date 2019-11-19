@@ -116,7 +116,11 @@ public class Attribute {
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return "name=" + this.name + " values= " + String.join(",", this.values);
+        if (this.values != null && this.values.length >= 0) {
+            return "name=" + this.name + " values=" + String.join(",", this.values);
+        } else {
+            return "name=" + this.name;
+        }
     }
 
     /**

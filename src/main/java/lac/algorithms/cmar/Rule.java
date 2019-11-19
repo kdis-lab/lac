@@ -58,10 +58,10 @@ public class Rule extends lac.algorithms.Rule {
     /**
      * Set the value for the support of the consequent
      * 
-     * @param supportConsequent
+     * @param supportKlass
      */
-    public void setSupportConsequent(long supportConsequent) {
-        this.supportKlass = supportConsequent;
+    public void setSupportKlass(long supportKlass) {
+        this.supportKlass = supportKlass;
     }
 
     /**

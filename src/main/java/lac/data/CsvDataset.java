@@ -107,7 +107,6 @@ public class CsvDataset extends Dataset {
             for (int i = 0; i < lines.size(); i++) {
                 this.addInstance(lines.get(i));
             }
-            System.out.println(this.indexIdentities);
             lines.clear();
 
             bufferedReader.close();

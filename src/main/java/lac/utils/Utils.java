@@ -24,17 +24,51 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * This class contains some useful methods to work with set of items
  */
 public class Utils {
     /**
+     * Performs the intersection of two tidsets
+     * 
+     * @param tidsetI First tidset to be intersected
+     * @param tidsetJ Second tidset to be intersected
+     * @return a new tidset with the intersection
+     */
+    public static Set<Integer> intersection(Set<Integer> tidsetI, Set<Integer> tidsetJ) {
+        Set<Integer> result = new HashSet<Integer>();
+
+        long supportI = tidsetI.size();
+        long supportJ = tidsetJ.size();
+
+        // Depending on the size of each tidset, the operation is performed on a
+        // direction or another. That's a small optimization but it could help
+        // with very large tidsets
+        if (supportI > supportJ) {
+            for (Integer tid : tidsetJ) {
+                if (tidsetI.contains(tid)) {
+                    result.add(tid);
+                }
+            }
+        } else {
+            for (Integer tid : tidsetI) {
+                if (tidsetJ.contains(tid)) {
+                    result.add(tid);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * Check if first itemset is a subset of the second one
      * 
      * @param itemset1 first itemset
      * @param itemset2 second itemset
-     * @return true if itemset1 is a subset of itemset2, false otherwise
+     * @return true if itemset2 is a subset of itemset1, false otherwise
      */
     public static Boolean isSubset(ArrayList<Short> itemset1, ArrayList<Short> itemset2) {
         return itemset1.containsAll(itemset2);

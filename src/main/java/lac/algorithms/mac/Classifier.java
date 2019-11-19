@@ -82,7 +82,7 @@ public class Classifier extends lac.algorithms.Classifier {
             }
         });
 
-        // Only those rules whose antecedent at least covver one instance are selected
+        // Only those rules whose antecedent at least cover one instance are selected
         ArrayList<Rule> finalRules = new ArrayList<Rule>();
         Boolean[] covered = new Boolean[dataset.size()];
         Arrays.fill(covered, Boolean.FALSE);
