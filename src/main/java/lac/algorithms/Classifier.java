@@ -22,7 +22,29 @@ import java.util.ArrayList;
 import lac.data.Instance;
 
 /**
- * Base class used to represent associative classifiers formed by a set of rules
+ * Base class used to represent associative classifiers formed by a set of
+ * rules.
+ * <a href="https://github.com/kdis-lab/lac/blob/main/doc/manual.pdf">Manual
+ * Section 5.3</a> contains a complete example on how to add new classifiers.
+ * <ul>
+ * <li>In the package of the new algorithm being added, a new class called
+ * Classifier has to be created. Its aim should be to store all the obtained
+ * rules and to have all the logic required to predict unseen examples. It
+ * should extend from lac.algorithms.Classifier</li>
+ * <li>Classifier class has to implement two methods. First, a constructor
+ * should be implemented, its goal is to initialize the state calling super.
+ * Second, a method called predict receiving an array of short and returning a
+ * short may be implemented. The aim of this method is to predict the example
+ * received as argument by means of the previously extracted rules. It should be
+ * highlighted that LAC stores internally each attributes' value as short, in
+ * this way much less memory is used. This representation is totally internal,
+ * and is managed automatically by lac.data.Dataset. Of course, this
+ * representation is also completely transparent for end-user and they do not
+ * need to preprocess nor do any kind of process. This technique of saving
+ * instances as short and not by the original types (string in almost all the
+ * cases) is well-known and it is being used by many current tools for both AC
+ * and ARM.</li>
+ * </ul>
  */
 public class Classifier {
     /**
