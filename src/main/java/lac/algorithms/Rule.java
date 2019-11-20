@@ -22,7 +22,13 @@ import java.util.ArrayList;
 import lac.utils.Utils;
 
 /**
- * Main class used to represent class association rules
+ * Main class used to represent class association rules. This class could be
+ * personalized when adding new algorithms if it requires new measures or some
+ * additional operations. For the current algorithms for example, it was
+ * personalized in CBA to incorporate some methods to quantify specific measures
+ * of this algorithm.
+ * <a href="https://github.com/kdis-lab/lac/blob/main/doc/manual.pdf">Manual
+ * Section 5.3</a> contains a complete example on how to add new algorithms.
  */
 public class Rule implements Cloneable {
 

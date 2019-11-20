@@ -22,8 +22,19 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Class containing the logic to read dataset in comma-separated values. RFC for
+ * this format could be fount at: https://tools.ietf.org/html/rfc4180
+ */
 public class CsvDataset extends Dataset {
+    /**
+     * Separator for each attribute per line
+     */
     private static String SEPARATOR = ",";
+
+    /**
+     * Name for the class in the dataset 
+     */
     private static String KLASS = "class";
 
     /**
@@ -119,7 +130,7 @@ public class CsvDataset extends Dataset {
     /**
      * Check if value is numeric or not
      * 
-     * @param strNum
+     * @param strNum check if value is numeric
      * @return true if value is numeric, false otherwise
      */
     private static boolean isNumeric(String strNum) {

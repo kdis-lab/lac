@@ -25,15 +25,38 @@ import java.util.Map.Entry;
 import lac.algorithms.Classifier;
 import lac.data.Dataset;
 
+/**
+ * This class has the logic for building a classifier using CARs. To produce the
+ * best classifier out of the whole set of rules would involve evaluating all
+ * the possible subsets of it on the training data and selecting the subset with
+ * the right rule sequence that m gives the least number of errors. There are
+ * 2^m such subsets, where m is the number of rules, which can be more than
+ * 10,000, not to mention different rule sequences. This is clearly infeasible,
+ * this class contains the heuristic proposed by the original authors to solve
+ * this problem
+ */
 public class CBAM2 {
     private ArrayList<Rule> U;
     private ArrayList<Rule> Q;
     private ArrayList<SelectedRule> C;
     private ArrayList<Structure> A;
+
+    /**
+     * Dataset for the rules
+     */
     private Dataset dataset;
 
+    /**
+     * Rules forming the classifier
+     */
     private ArrayList<? extends Rule> rules;
 
+    /**
+     * Constructor to post-process the rules
+     * 
+     * @param dataset of the rules being processed
+     * @param rules   being used as base for the classifier
+     */
     @SuppressWarnings("unchecked")
     public CBAM2(Dataset dataset, ArrayList<? extends Rule> rules) {
         this.dataset = dataset;
@@ -50,6 +73,11 @@ public class CBAM2 {
         this.stage3();
     }
 
+    /**
+     * Sort the set of generated rules considering confidence, support and size.
+     * This is to ensure that we will choose the highest precedence rules for our
+     * classifier.
+     */
     private void stage1() {
         int cRule, wRule;
         short y;
@@ -97,6 +125,22 @@ public class CBAM2 {
         }
     }
 
+    /**
+     * Select rules for the classifier from R following the sorted sequence. For
+     * each rule r, we go through D to find those cases covered by r (they satisfy
+     * the conditions of r). We mark r if it correctly classifies a case d . d.id is
+     * the unique identification number of d. If r can correctly classify at least
+     * one case (i.e., if r is marked), it will be a potential rule in our
+     * classifier. Those cases it covers are then removed from D. A default class is
+     * also selected (the majority class in the remaining data),which means that if
+     * we stop selecting more rules for our classifier C this class will be the
+     * default class of C. We then compute and record the total number of errors
+     * that are made by the current C and the default class . This is the sum of the
+     * number of errors that have been made by all the selected rules in C and the
+     * number of errors to be made by the default class in the training data. When
+     * there is no rule or no training case left, the rule selection process is
+     * completed.
+     */
     private void stage2() {
         int poscRule, poswRule;
         Structure str;
@@ -140,6 +184,13 @@ public class CBAM2 {
         }
     }
 
+    /**
+     * Discard those rules in C that do not improve the accuracy of the classifier.
+     * The first rule at which there is the least number of errors recorded on D is
+     * the cutoff rule. All the rules after this rule can be discarded because they
+     * only produce more errors. The undiscarded rules and the default class of the
+     * last rule in C form our classifier.
+     */
     @SuppressWarnings("unchecked")
     private void stage3() {
         long ruleErrors, errorsOfRule;
@@ -228,11 +279,9 @@ public class CBAM2 {
     }
 
     /**
-     * <p>
-     * Function to get stored classifier
-     * </p>
+     * Returns the classifier
      * 
-     * @return RuleBase The whole classifier
+     * @return Classifier with the whole of the classifier
      * @throws CloneNotSupportedException
      */
     public Classifier getClassifier() throws CloneNotSupportedException {
@@ -264,6 +313,13 @@ public class CBAM2 {
         return rb;
     }
 
+    /**
+     * Check if the rule was contained in the set of rules
+     * 
+     * @param rb   set of rules
+     * @param rule to check if it was contained or not
+     * @return true if rule was not contained
+     */
     private boolean isNew(ArrayList<Rule> rb, Rule rule) {
         Rule r;
 

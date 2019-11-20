@@ -24,7 +24,6 @@ import lac.algorithms.Algorithm;
 import lac.data.Dataset;
 
 /**
- *
  * Main class for the algorithm CBA. Please refer to the original publication
  * for more information on this algorithm. B. Liu, W. Hsu, and Y. Ma,
  * “Integrating classification and association rule mining,” in 4th
