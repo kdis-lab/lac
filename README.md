@@ -42,8 +42,6 @@ Everyone interacting in LAC codebases, issue trackers, and wiki is expected to f
 
 LAC makes use of [issues of Github](https://github.com/kdis-lab/lac/issues) to keep track of bugs, enhancements, or other requests. Please, bore in mind that when reporting issues details or steps on how to reproduce the bug has to be added to facilitate reproducibility. Follow the github manual on [how to create a issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue).
 
-TODO
-
 ## Authors - Citation
 
 This library is currently in a reviewing process in the prestigious Knowledge-Based Systems journal.
