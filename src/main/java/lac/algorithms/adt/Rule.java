@@ -117,7 +117,7 @@ public class Rule extends lac.algorithms.Rule {
      * @see lac.algorithms.Rule#toString()
      */
     public String toString() {
-        return super.toString() + " hits: " + this.hits + " misses: " + this.misses + " per; "
+        return super.toString() + " hits: " + this.hits + " misses: " + this.misses + " per: "
                 + this.getPessimisticErrorEstimate();
     }
 

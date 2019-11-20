@@ -18,7 +18,10 @@
 package lac.algorithms;
 
 /**
- * Abstract class used to represent the configuration of the algorithms
+ * Abstract class used to represent the configuration of the algorithms.
+ * <a href="https://github.com/kdis-lab/lac/blob/main/doc/manual.pdf">Manual
+ * Section 5.3</a> contains a complete example on how to add new algorithms and
+ * its configuration.
  */
 public abstract class Config {
 }

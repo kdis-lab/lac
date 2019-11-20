@@ -87,6 +87,9 @@ public class Rule extends lac.algorithms.Rule implements Comparable {
      */
     public Rule(short klass) {
         super(klass);
+        this.klassesCovered = new HashMap<Short, Long>();
+        this.replace = new ArrayList<Replace>();
+        this.time = System.currentTimeMillis();
         this.pessimisticErrorRate = 0;
         this.hits = 0;
         this.misses = 0;
@@ -115,7 +118,7 @@ public class Rule extends lac.algorithms.Rule implements Comparable {
      * rule
      * 
      * @param a
-     * @return
+     * @return true if is subset, false otherwise
      */
     public boolean isSubset(Rule a) {
         if (this.klass != a.getKlass())

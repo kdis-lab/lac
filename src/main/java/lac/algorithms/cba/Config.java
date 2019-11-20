@@ -32,11 +32,6 @@ public class Config extends lac.algorithms.Config {
     private double minConf = 0.5;
 
     /**
-     * Maximum number of rules
-     */
-    private long limitRules = 80000;
-
-    /**
      * Set the value of minimum support
      * 
      * @param minSup minimum value of frequency of occurrence
@@ -73,24 +68,6 @@ public class Config extends lac.algorithms.Config {
     }
 
     /**
-     * Set the limit of rules to be extracted
-     * 
-     * @param limitRules to be extracted
-     */
-    public void setLimitRules(Long limitRules) {
-        this.limitRules = limitRules <= 0 ? Long.MAX_VALUE : limitRules;
-    }
-
-    /**
-     * Set the limit of rules to be extracted
-     * 
-     * @param limitRules to be extracted
-     */
-    public void setLimitRules(Integer limitRules) {
-        this.setLimitRules(new Long(limitRules));
-    }
-
-    /**
      * Minimum value of support for the rules
      * 
      * @return minimum support
@@ -114,6 +91,6 @@ public class Config extends lac.algorithms.Config {
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return "minSup=" + this.minSup + " minConf=" + this.minConf + " limitRules=" + this.limitRules;
+        return "minSup=" + this.minSup + " minConf=" + this.minConf;
     }
 }

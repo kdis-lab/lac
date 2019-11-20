@@ -373,7 +373,7 @@ public class FPGrowth {
             Rule rule = new Rule(itemsetOutputBuffer, entry.getKey());
             rule.setSupportAntecedent(support);
             rule.setSupportRule(entry.getValue());
-            rule.setSupportConsequent(dataset.getFrequencyByKlass().get(rule.getKlass()));
+            rule.setSupportKlass(dataset.getFrequencyByKlass().get(rule.getKlass()));
 
             if (rule.getSupportRule() >= this.minSupportRelative && rule.getConfidence() >= this.minConf)
                 rules.add(rule);

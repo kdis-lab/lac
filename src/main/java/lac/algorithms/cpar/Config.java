@@ -53,11 +53,29 @@ public class Config extends lac.algorithms.Config {
     }
 
     /**
+     * Set the minimum best gain which will be allowed in rules
+     * 
+     * @param minBestGain the minimum best gain
+     */
+    public void setMinBestGain(Integer minBestGain) {
+        this.minBestGain = minBestGain;
+    }
+
+    /**
      * Set the decay factor (alpha)
      * 
      * @param alpha decay factor
      */
     public void setAlpha(Double alpha) {
+        this.alpha = alpha;
+    }
+
+    /**
+     * Set the decay factor (alpha)
+     * 
+     * @param alpha decay factor
+     */
+    public void setAlpha(Integer alpha) {
         this.alpha = alpha;
     }
 
@@ -76,6 +94,15 @@ public class Config extends lac.algorithms.Config {
      * @param delta number of rules used to combine to generate new rules
      */
     public void setDelta(Double delta) {
+        this.delta = delta;
+    }
+
+    /**
+     * Number of rules combining for every example in rule generation phase
+     * 
+     * @param delta number of rules used to combine to generate new rules
+     */
+    public void setDelta(Integer delta) {
         this.delta = delta;
     }
 

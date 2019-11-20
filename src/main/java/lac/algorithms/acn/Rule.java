@@ -183,24 +183,26 @@ public class Rule extends lac.algorithms.Rule {
         if (antecedent.isEmpty())
             return true;
 
-        if (this.isNegative()) {
+        if (!this.isNegative()) {
+            return super.matching(example);
+        } else {
             ArrayList<Short> positiveAntecedent = new ArrayList<Short>();
+            List<Short> exampleA = Arrays.asList(example);
 
             for (int i = 0; i < this.antecedent.size(); i++) {
                 if (this.negatedItems.get(i)) {
                     short negativeItem = this.antecedent.get(i);
 
                     // If contain negative Item, it cannot match this example
-                    if (antecedent.contains(negativeItem))
+                    if (exampleA.contains(negativeItem)) {
                         return false;
+                    }
                 } else {
                     positiveAntecedent.add(this.antecedent.get(i));
                 }
             }
 
             return Utils.isSubset(positiveAntecedent, example);
-        } else {
-            return super.matching(example);
         }
     }
 }

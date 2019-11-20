@@ -96,7 +96,7 @@ public class ConfigExecution {
      *                      classifier
      * @param report        Path where the reports will be stored
      */
-    ConfigExecution(String nameAlgorithm, Config config, String train, String test, ArrayList<String> reportType,
+    public ConfigExecution(String nameAlgorithm, Config config, String train, String test, ArrayList<String> reportType,
             String report) {
         this.nameAlgorithm = nameAlgorithm;
         this.config = config;

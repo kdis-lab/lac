@@ -83,8 +83,8 @@ public class Rule extends lac.algorithms.Rule {
     public Rule(Short[] antecedent, Set<Integer> tidsetAntecedent, Short klass, Set<Integer> tidsetRule) {
         super(antecedent, klass);
 
-        this.tidsetAntecedent = tidsetAntecedent;
-        this.tidsetRule = tidsetRule;
+        this.setTidsetAntecedent(tidsetAntecedent);
+        this.setTidsetRule(tidsetRule);
     }
 
     /**
@@ -104,6 +104,7 @@ public class Rule extends lac.algorithms.Rule {
      */
     public void setTidsetAntecedent(Set<Integer> tidsetAntecedent) {
         this.tidsetAntecedent = tidsetAntecedent;
+        this.supportAntecedent = tidsetAntecedent.size();
     }
 
     /**
@@ -113,6 +114,7 @@ public class Rule extends lac.algorithms.Rule {
      */
     public void setTidsetRule(Set<Integer> tidsetRule) {
         this.tidsetRule = tidsetRule;
+        this.supportRule = tidsetRule.size();
     }
 
     /**
@@ -141,25 +143,5 @@ public class Rule extends lac.algorithms.Rule {
      */
     public Set<Integer> getTidsetAntecedent() {
         return tidsetAntecedent;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see lac.algorithms.Rule#getSupportAntecedent()
-     */
-    @Override
-    public long getSupportAntecedent() {
-        return this.tidsetAntecedent.size();
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see lac.algorithms.Rule#getSupportRule()
-     */
-    @Override
-    public long getSupportRule() {
-        return this.tidsetRule.size();
     }
 }

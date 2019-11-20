@@ -133,7 +133,7 @@ public class Rule implements Cloneable {
      * 
      * @return relative support for the consequent
      */
-    public long getSupportConsequent() {
+    public long getSupportKlass() {
         return this.supportKlass;
     }
 
@@ -153,12 +153,12 @@ public class Rule implements Cloneable {
     /**
      * Function to check if a rule is equal to another given.
      * 
-     * @param rule Rule to compare with current
+     * @param other Rule to compare with current
      * @return true if they are equal, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
-        Rule rule = (Rule) o;
+    public boolean equals(Object other) {
+        Rule rule = (Rule) other;
 
         if (this.klass != rule.getKlass())
             return false;
@@ -242,7 +242,7 @@ public class Rule implements Cloneable {
     /**
      * Function which sets the rule's klass.
      * 
-     * @param klasss rule's klass
+     * @param klass rule's klass
      */
     public void setKlass(short klass) {
         this.klass = klass;

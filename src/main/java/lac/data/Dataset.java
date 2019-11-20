@@ -338,7 +338,6 @@ public abstract class Dataset {
     /**
      * Adds the metadata information for the class
      * 
-     * @param name   of the attribute which contains the clas
      * @param values all the possible values which could take
      */
     public void addKlass(String[] values) {

@@ -1,0 +1,23 @@
+.car: &car
+  train: car1.arff
+  test: car1.tst.arff
+
+executions:
+  -
+    name_algorithm: 'MAC'
+    configuration: 
+      min_sup: 0.001
+      min_conf: 0.9
+    <<: *car
+    report_type: 
+      - 'KlassReport'
+      - 'ClassifierReport'
+      - 'MetricsReport'
+    report: '/tmp/result.mac'
+  - 
+    name_algorithm: 'ACCF'
+    configuration: 
+      min_sup: 0.001
+      min_conf: 0.9
+    train: car1.arff
+    test: car1.tst.arff

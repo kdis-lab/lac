@@ -52,6 +52,15 @@ public class Config extends lac.algorithms.Config {
     }
 
     /**
+     * Sets the minimum confidence
+     * 
+     * @param confidence
+     */
+    public void setMinConf(Integer confidence) {
+        this.minConf = confidence;
+    }
+
+    /**
      * Get the minimum value for the merit measure
      * 
      * @return the minimum value for the merit measure
@@ -67,5 +76,23 @@ public class Config extends lac.algorithms.Config {
      */
     public void setMinMerit(Double minMerit) {
         this.minMerit = minMerit;
+    }
+
+    /**
+     * Sets the minimum value for the merit measure
+     * 
+     * @param minMerit minimum value for merit
+     */
+    public void setMinMerit(Integer minMerit) {
+        this.minMerit = minMerit;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    public String toString() {
+        return "minConf=" + this.minConf + " minMerit=" + this.minMerit;
     }
 }

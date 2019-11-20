@@ -202,7 +202,7 @@ public class ConfusionMatrix {
      * Add both prediction and real value to the confusion matrix
      * 
      * @param realValue
-     * @param predictedValue
+     * @param observedValue
      */
     public void add(Short realValue, Short observedValue) {
         this.allRealklasss.add(realValue);
