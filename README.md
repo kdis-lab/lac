@@ -2,7 +2,7 @@
 
 ### What is LAC?
 
-LAC is the first Associative Classification library, aiming at covering many well-known algorithms for AC. This tool is specifically designed to be used on AC, unlike other tools which are more generic. LAC has not only algorithms, but this library also provides different reports to quantify quality of the solutions. In this sense, interpretability measures have been added to gauge the interpretability of the classifiers. Likewise, many accuracy measures are also been included to quantify how accurate are the predictions. Finall, LAC also provides a framework to automate experimental studies, supporting both sequential and parallel executions.
+LAC is the first Associative Classification library, aiming at covering many well-known algorithms for AC. This tool is specifically designed to be used on AC, unlike other tools which are more generic. LAC has not only algorithms, but this library also provides different reports to quantify quality of the solutions. In this sense, interpretability measures have been added to gauge the interpretability of the classifiers. Likewise, many accuracy measures are also been included to quantify how accurate are the predictions. Finally, LAC also provides a framework to automate experimental studies, supporting both sequential and parallel executions.
 
 
 ## FAQ
