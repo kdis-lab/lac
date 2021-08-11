@@ -8,12 +8,12 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details. You should have 
- * received a copy of the GNU General Public License along with 
- * this program.  If not, see http://www.gnu.org/licenses/
+ * This algorithm was adapted from the SPMF Library, which is is licensed 
+ * under the GNU GPL v3 license.
+ * Fournier-Viger, P., Lin, C.W., Gomariz, A., Gueniche, T., Soltani, A., 
+ * Deng, Z., Lam, H. T. (2016). The SPMF Open-Source Data Mining Library 
+ * Version 2. Proc. 19th European Conference on Principles of Data Mining 
+ * and Knowledge Discovery (PKDD 2016) Part III, Springer LNCS 9853, pp. 36-40.
  */
 package lac.algorithms.accf;
 
