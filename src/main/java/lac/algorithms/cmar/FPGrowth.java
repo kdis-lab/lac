@@ -15,7 +15,7 @@
  * received a copy of the GNU General Public License along with 
  * this program.  If not, see http://www.gnu.org/licenses/
  *
- * This algorithm was taken from the SPMF Library, which is is licensed 
+ * This algorithm was adapted from the SPMF Library, which is is licensed 
  * under the GNU GPL v3 license.
  * Fournier-Viger, P., Lin, C.W., Gomariz, A., Gueniche, T., Soltani, A., 
  * Deng, Z., Lam, H. T. (2016). The SPMF Open-Source Data Mining Library 
